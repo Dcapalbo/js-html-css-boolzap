@@ -4,9 +4,12 @@ padding: 0px;
 margin: 0px;
 }
 
-.fluid-square {
-  height: 20vh;
-  background-color: #009688;
+header {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  height: 25vh;
+  background-color: #009687;
 }
 
 body {
@@ -30,7 +33,7 @@ display: flex;
 }
 
 /* section */
-.aside-nav, .text-area {
+.aside-nav {
   height: 100%;
 }
 
@@ -99,7 +102,6 @@ nav .notifications{
   width: 50px;
 }
 /* search section */
-
 .search-bar{
   display: flex;
   align-items: center;
@@ -112,6 +114,7 @@ nav .notifications{
   text-align: center;
   width: 10%;
 }
+
 .search-icon i {
   color: lightgrey;
 }
@@ -120,6 +123,7 @@ nav .notifications{
   padding-left: 5px;
   width: 90%;
   height: 30px;
+  border-radius: 20px;
 }
 
 /* template */
@@ -134,6 +138,7 @@ nav .notifications{
 .contact-template p, span {
   color: lightgrey;
 }
+
 .info-contact {
   display: flex;
   flex-direction: column;
@@ -149,27 +154,55 @@ nav .notifications{
 
 nav .contact-list{
   height: calc(100% - 220px);
-  background-color: #e9ebeb;
+  background-color: #fff;
   overflow: scroll;
+}
+
+nav .contact-list li:hover {
+  background-color: #e9ebeb;
 }
 
 /* message contact area */
 .message-contact-area{
   width: 70%;
-  background-color: #fff;
+  background-color: #e9ebeb;
+  overflow: scroll;
 }
 
+.message-contact-area li i {
+  color: #b1b1b1;
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 20px;
+}
 .header-message-area {
   height: 80px;
-  background-color: lightgrey;
+  background-color: #e9ebeb;
 }
 
 .main-message-area {
-  height: calc(100% - 152px);
+  height: calc(100% - 150px);
   background-image: url(../img/mine.jpg);
 }
 
 .footer-message-area {
-  height: 72px;;
-  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #F3EEEA;
+}
+
+.footer-message-area i {
+  font-size: 30px;
+  line-height: 70px;
+  padding: 0px 30px;
+  color: #b1b1b1;
+}
+
+.footer-message-area input {
+  margin: 15px 15px;
+  padding-left: 10px;
+  width: 80%;
+  height: 40px;
+  border-radius: 20px;
 }
