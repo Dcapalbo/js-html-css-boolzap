@@ -3,3 +3,70 @@ box-sizing: border-box;
 padding: 0px;
 margin: 0px;
 }
+
+body {
+  width: 100%;
+  background-color: #009688;
+}
+/* basic values */
+/* container */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 80%;
+  height: calc(100vh - 40px);
+  margin: 20px auto;
+}
+
+/* section */
+.aside-nav, .text-area {
+  height: 100%;
+}
+
+/* NAV */
+nav.aside-nav{
+  width: 30%;
+}
+
+/* NAV > */
+nav .header-aside-nav{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #eaeaea;
+}
+
+img {
+  margin: 5px 5px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+.pannel-account{
+  margin: 5px 5px;
+  padding: 5px;
+  width: 150px;
+  height: 50px;
+  background-color: blue;
+}
+nav .notifications{
+  height: 80px;
+  background-color: #8edafc;
+}
+
+nav .search-bar{
+  height: 60px;
+  background-color: lightgreen;
+}
+
+nav .contact-list{
+  height: calc(100% - 200px);
+  background-color: #e9ebeb;
+}
+
+/* INPUT AREA */
+.text-area{
+  width: 70%;
+  background-color: #fff;
+}
