@@ -4,9 +4,14 @@ padding: 0px;
 margin: 0px;
 }
 
-body {
-  width: 100%;
+.fluid-square {
+  height: 20vh;
   background-color: #009688;
+}
+
+body {
+  height: 80vh;
+  background-color:#DBDBD2;
 }
 
 .list-inline {
@@ -20,7 +25,7 @@ display: flex;
   display: flex;
   flex-wrap: nowrap;
   width: 80%;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 60px);
   margin: 20px auto;
 }
 
@@ -40,6 +45,7 @@ nav .header-aside-nav{
   justify-content: space-between;
   height: 80px;
   background-color: #eaeaea;
+  border-right: 1px solid lightgrey;
 }
 
 img {
@@ -71,25 +77,61 @@ img {
 /* nav notification */
 
 nav .notifications{
-  height: 60px;
+  height: 80px;
   background-color: #8edafc;
 }
 
-nav .search-bar{
+#bell {
+  color: #000;
+  opacity: 0.5;
+  text-decoration: underline;
+}
+
+#logobell {
+  color: #8edafc;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 35px;
+  height: 50px;
+  width: 50px;
+}
+/* search section */
+
+.search-bar{
+  display: flex;
+  align-items: center;
   height: 60px;
-  background-color: lightgreen;
+  padding: 5px;
+  background-color: #eaeaea;
+}
+
+.search-icon {
+  text-align: center;
+  width: 10%;
+}
+.search-icon i {
+  color: lightgrey;
+}
+
+.search-bar input {
+  padding-left: 5px;
+  width: 90%;
+  height: 30px;
 }
 
 /* template */
 
-.basic-template {
+.contact-template {
   display: flex;
   width: 100%;
   height: 80px;
   border-bottom: 1px solid lightgrey;
 }
 
-.basic-template p, span {
+.contact-template p, span {
   color: lightgrey;
 }
 .info-contact {
@@ -106,12 +148,28 @@ nav .search-bar{
 }
 
 nav .contact-list{
-  height: calc(100% - 200px);
+  height: calc(100% - 220px);
   background-color: #e9ebeb;
+  overflow: scroll;
 }
 
-/* INPUT AREA */
-.text-area{
+/* message contact area */
+.message-contact-area{
   width: 70%;
   background-color: #fff;
+}
+
+.header-message-area {
+  height: 80px;
+  background-color: lightgrey;
+}
+
+.main-message-area {
+  height: calc(100% - 152px);
+  background-image: url(../img/mine.jpg);
+}
+
+.footer-message-area {
+  height: 72px;;
+  background-color: lightgrey;
 }
