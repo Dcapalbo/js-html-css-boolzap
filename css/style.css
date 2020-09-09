@@ -2,26 +2,21 @@
 box-sizing: border-box;
 padding: 0px;
 margin: 0px;
+font-family: serif;
 }
-
 header {
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
   height: 25vh;
   background-color: #009687;
 }
-
 body {
-  height: 80vh;
+  height: 75vh;
   background-color:#DBDBD2;
 }
-
 .list-inline {
 list-style: none;
 display: flex;
 }
-
 /* basic values */
 /* container */
 .container {
@@ -31,18 +26,13 @@ display: flex;
   height: calc(100vh - 60px);
   margin: 20px auto;
 }
-
-/* section */
+/* Nav section */
 .aside-nav {
   height: 100%;
 }
-
-/* NAV */
 nav.aside-nav{
   width: 30%;
 }
-
-/* NAV > */
 nav .header-aside-nav{
   display: flex;
   justify-content: space-between;
@@ -50,7 +40,6 @@ nav .header-aside-nav{
   background-color: #eaeaea;
   border-right: 1px solid lightgrey;
 }
-
 img {
   margin: 10px 5px;
   padding: 5px;
@@ -58,38 +47,30 @@ img {
   height: 60px;
   border-radius: 100px;
 }
-
 .pannel-account{
   padding-top: 15px;
   width: 30%;
   height: 50px;
 }
-
 .pannel-account ul li {
   display: flex;
   width: calc(100% / 3);
   height: 50px;
 }
-
 .pannel-account ul li a {
   margin: auto;
   color: #b1b1b1;
 }
-
-/* end header aside  */
 /* nav notification */
-
 nav .notifications{
   height: 80px;
   background-color: #8edafc;
 }
-
 #bell {
   color: #000;
   opacity: 0.5;
   text-decoration: underline;
 }
-
 #logobell {
   color: #8edafc;
   background-color: #fff;
@@ -101,7 +82,7 @@ nav .notifications{
   height: 50px;
   width: 50px;
 }
-/* search section */
+/* search nav section */
 .search-bar{
   display: flex;
   align-items: center;
@@ -109,36 +90,29 @@ nav .notifications{
   padding: 5px;
   background-color: #eaeaea;
 }
-
 .search-icon {
   text-align: center;
   width: 10%;
 }
-
 .search-icon i {
   color: lightgrey;
 }
-
 .search-bar input {
   padding-left: 5px;
   width: 90%;
   height: 30px;
   border-radius: 20px;
 }
-
 /* template */
-
 .contact-template {
   display: flex;
   width: 100%;
   height: 80px;
   border-bottom: 1px solid lightgrey;
 }
-
 .contact-template p, span {
   color: lightgrey;
 }
-
 .info-contact {
   display: flex;
   flex-direction: column;
@@ -146,29 +120,24 @@ nav .notifications{
   padding: 10px 10px;
   width: calc(100% - 50px);
 }
-
 .info-contact-name {
   display: flex;
   justify-content: space-between;
 }
-
 nav .contact-list{
   height: calc(100% - 220px);
   background-color: #fff;
-  overflow: scroll;
+  overflow-y: scroll;
 }
-
 nav .contact-list li:hover {
   background-color: #e9ebeb;
 }
-
 /* message contact area */
 .message-contact-area{
   width: 70%;
   background-color: #e9ebeb;
-  overflow: scroll;
+  overflow-y: scroll;
 }
-
 .message-contact-area li i {
   color: #b1b1b1;
   padding-left: 30px;
@@ -179,26 +148,55 @@ nav .contact-list li:hover {
   height: 80px;
   background-color: #e9ebeb;
 }
-
 .main-message-area {
+  display: flex;
+  justify-content: flex-end;
   height: calc(100% - 150px);
   background-image: url(../img/mine.jpg);
 }
-
+.main-message-area p {
+  text-align: center;
+  line-height: 60px;
+}
+.main-message-screen li {
+  list-style: none;
+  margin: 20px 50px;
+  display: block;
+}
+.green-box {
+  border-radius: 10px;
+  width: 150px;
+  height: 60px;
+  background-color: lightgreen;
+  position: relative;
+}
+.white-box {
+  border-radius: 10px;
+  width: 150px;
+  height: 60px;
+  background-color: #fff;
+  position: relative;
+}
+.text-time {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: #000;
+}
+/* footer */
 .footer-message-area {
   display: flex;
   justify-content: space-between;
   height: 70px;
   background-color: #F3EEEA;
 }
-
 .footer-message-area i {
   font-size: 30px;
   line-height: 70px;
   padding: 0px 30px;
   color: #b1b1b1;
 }
-
 .footer-message-area input {
   margin: 15px 15px;
   padding-left: 10px;
