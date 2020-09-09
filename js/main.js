@@ -9,9 +9,9 @@ $(document).ready(function() {
       // insert the text inside of the p
       template.find("p").text(sms);
       // insert the class
-      template.addClass(".green-box");
+      template.addClass("green-box");
       // append the object inside of the main message area ul
-      $("ul .main-message-screen").append(template);
+      $(".main-message-screen").append(template);
     }
   }
   // make a function to send the text with a press of a button on the keyboard
