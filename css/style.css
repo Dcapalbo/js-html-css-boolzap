@@ -138,6 +138,11 @@ nav .contact-list li:hover {
   background-color: #e9ebeb;
   overflow-y: scroll;
 }
+
+.main-message-area {
+  overflow-y: scroll;
+  position: relative;
+}
 .message-contact-area li i {
   color: #b1b1b1;
   padding-left: 30px;
@@ -160,22 +165,30 @@ nav .contact-list li:hover {
 }
 .main-message-screen li {
   list-style: none;
+  padding: 0px 10px;
   margin: 20px 50px;
   display: block;
 }
-.green-box {
+.send {
+  word-break: break-all;
   border-radius: 10px;
-  width: 150px;
-  height: 60px;
+  max-width: 100vh;
+  max-height: 100vh;
   background-color: lightgreen;
   position: relative;
 }
-.white-box {
+.automatic {
+  word-break: break-all;
   border-radius: 10px;
-  width: 150px;
-  height: 60px;
+  max-width: 100vh;
+  max-height: 100vh;
+  padding: 0px 10px;
   background-color: #fff;
   position: relative;
+  position: absolute;
+  white-space: nowrap;
+  top: 80px;
+  left: 20px;
 }
 .text-time {
   position: absolute;
