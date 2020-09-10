@@ -18,6 +18,25 @@ $(document).ready(function() {
       $(".main-message-screen").append(template);
     }
   }
+
+  $(".footer-message-area input").mouseenter(
+  function() {
+    var plane = $(".fa-paper-plane")
+    var microphone = $(".fa-microphone")
+      plane.removeClass("display-none");
+      microphone.addClass("display-none");
+      sendSms();
+      // make an asincron function and invoke it to get an automatic reply
+    });
+
+    $(".footer-message-area input").mouseleave(
+    function() {
+      var plane = $(".fa-paper-plane")
+      var microphone = $(".fa-microphone")
+        plane.addClass("display-none");
+        microphone.removeClass("display-none");
+      });
+
   //make a function to get the actual time from the client computer
   function getTime() {
     var date = new Date();
@@ -30,6 +49,7 @@ $(document).ready(function() {
       var time = hours + " : " + minutes;
     } return time;
   }
+
   function getReply(text) {
     // make a variable to clone the template
     var template = $(".template .message-row").clone();
@@ -41,6 +61,7 @@ $(document).ready(function() {
     // append the text inside the new template
     $(".main-message-screen").append(template);
   }
+
   // make a function to send the text with a press of a button on the keyboard
   $(".footer-message-area input").keydown(function(event) {
     if (event.which == 13) {
@@ -51,6 +72,7 @@ $(document).ready(function() {
       }, 1000);
     }
   });
+
     $(".search-bar input").keydown(
       function () {
         // make a variable to search for the client input
@@ -68,6 +90,5 @@ $(document).ready(function() {
             }
           }
         )
-      }
-    )
+    });
 });
