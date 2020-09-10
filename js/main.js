@@ -2,7 +2,7 @@ $(document).ready(function() {
   // myFunctions
   // make a function to insert a text from the input inside of the message-area
   function sendSms() {
-    // make a variable for the input value
+    // make a variable for the value of the input
     var sms = $(".footer-message-area input").val();
     if (sms != "") {
       $(".footer-message-area input").val("");
@@ -21,16 +21,19 @@ $(document).ready(function() {
 
   $(".footer-message-area input").mouseenter(
   function() {
+    // make some variables for an elastic coding
+    // when the mouse enter inside the input box, show the plane and hide the microphone
     var plane = $(".fa-paper-plane")
     var microphone = $(".fa-microphone")
       plane.removeClass("display-none");
       microphone.addClass("display-none");
       sendSms();
-      // make an asincron function and invoke it to get an automatic reply
     });
 
     $(".footer-message-area input").mouseleave(
     function() {
+      // make some variables for an elastic coding
+      // when the mouse enter inside the input box, show the plane and hide the microphone
       var plane = $(".fa-paper-plane")
       var microphone = $(".fa-microphone")
         plane.addClass("display-none");
@@ -73,22 +76,19 @@ $(document).ready(function() {
     }
   });
 
-    $(".search-bar input").keydown(
-      function () {
-        // make a variable to search for the client input
-        var searchInput = $(this).val().toLowerCase();
-        var contactsName = $(".contact-template .info-contact-name");
-        // make some conditions
-          contactsName.each(
-            // make a function which will show or hide the contact list that doesn't have the input inserted by the user
-            function () {
-              var name =  $(this).text();
-              if (name.includes(searchInput)) {
-               $(this).parents(".contact-template").show();
-             } else {
-               $(this).parents(".contact-template").hide();
-            }
-          }
-        )
+  $(".search-bar input").keyup(function(){
+      // make a variable to save the input
+      var words = $(".search-bar input").val();
+      words = words.toLowerCase();
+      // for every value inside the input, put a control with the inside contacts name
+      $('.info-contact-name').each(function () {
+        var contact = $(this).text().toLowerCase();
+        var insideArray = contact.includes(words);
+        if (insideArray == false) {
+          $(this).parents(".contact-template").hide();
+        } else {
+         $(this).parents(".contact-template").show();
+        }
+      });
     });
 });
