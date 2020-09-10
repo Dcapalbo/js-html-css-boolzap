@@ -1,9 +1,7 @@
 $(document).ready(function() {
   // myFunctions
-
   // make a function to insert a text from the input inside of the message-area
   function sendSms() {
-    // invoke the getTime function
     // make a variable for the input value
     var sms = $(".footer-message-area input").val();
     if (sms != "") {
@@ -12,6 +10,7 @@ $(document).ready(function() {
       var template = $(".template .message-row").clone();
       // insert the text inside of the p and the span
       template.find("p").text(sms);
+      // invoke the getTime function
       template.find("span").text(getTime()).addClass("text-time");
       // insert the class
       template.addClass("send");
@@ -38,7 +37,7 @@ $(document).ready(function() {
     template.find("p").text(text);
     template.find("span").text(getTime()).addClass("text-time");
     // attach the class tot he template
-    template.addClass("automatic");
+    template.addClass("automatic-response");
     // append the text inside the new template
     $(".main-message-screen").append(template);
   }
@@ -51,15 +50,15 @@ $(document).ready(function() {
         getReply("ok!")
       }, 1000);
     }
-
-    $(".search-bar input").keyup(
+  });
+    $(".search-bar input").keydown(
       function () {
         // make a variable to search for the client input
-        var searchInput = $(this).val().toLowercase();
+        var searchInput = $(this).val().toLowerCase();
         var contactsName = $(".contact-template .info-contact-name");
         // make some conditions
           contactsName.each(
-            // make a function which will show or hide
+            // make a function which will show or hide the contact list that doesn't have the input inserted by the user
             function () {
               var name =  $(this).text();
               if (name.includes(searchInput)) {
@@ -71,5 +70,4 @@ $(document).ready(function() {
         )
       }
     )
-  });
 });
