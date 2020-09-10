@@ -56,21 +56,19 @@ $(document).ready(function() {
       function () {
         // make a variable to search for the client input
         var searchInput = $(this).val().toLowercase();
+        var contactsName = $(".contact-template .info-contact-name");
         // make some conditions
-        if (searchInput != "") {
-          var contactsName = $(".contact-list .info-contact-name");
           contactsName.each(
             // make a function which will show or hide
             function () {
               var name =  $(this).text();
               if (name.includes(searchInput)) {
-               $(this).parents(".contact-list").show();
+               $(this).parents(".contact-template").show();
              } else {
-               $(this).parents(".contact-list").hide();
-             }
+               $(this).parents(".contact-template").hide();
             }
-          )
-        }
+          }
+        )
       }
     )
   });
