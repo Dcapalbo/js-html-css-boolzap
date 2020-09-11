@@ -6,8 +6,8 @@ $(document).ready(function() {
     // when the mouse enter inside the input box, show the plane and hide the microphone
     var plane = $(".fa-paper-plane")
     var microphone = $(".fa-microphone")
-      plane.removeClass("active-dn");
-      microphone.addClass("active-dn");
+      plane.removeClass("d-none");
+      microphone.addClass("d-none");
       sendSms();
     });
     $(".footer-message-area input").mouseleave(
@@ -86,24 +86,23 @@ $(document).ready(function() {
       });
     });
 
-  $(".contact-template").click(function(){
-     // removing the active class from every contact-template and message-contact-   area
-     $(".contact-template").removeClass("active");
-     $(".message-contact-area").removeClass("active-dn");
-     // add active class to the contact clicked
-     $(this).addClass("active");
-     // make a variable for data-contact and data-sms
-     var attrContact = $(this).attr("data-contact");
-     var attrChat = $(this).attr("data-sms")
-     // apply the active class at the chat with the same value of contacts
-     $(".message-contact-area[data-chat="+attrContact+"]").addClass("active-db");
-     // make a copy of the img
-     var contactImg = $(this).find(".img-wrapper img").clone();
-     // make a copy of the name
-     var contactName = $(this).find(".info-contact-name h4").text();
-     // insert the value inside of the header message area
-     $(".header-message-area").find(".img-wrapper").html(contactImg);
-     $(".header-message-area").find(".header-message-area h4").html(contactName);
-   });
-
+    $(".contact-template").click(function(){
+       // removing the active class from every contact-template and message-contact-    area
+       $(".contact-template").removeClass("active");
+       $(".message-contact-area").removeClass("active");
+       // add active class to the contact clicked
+       $(this).addClass("active");
+       // make a variable for data-contact and data-sms
+       var attrContact = $(this).attr("data-contact");
+       // var attrChat = $(this).attr("data-sms")
+       // apply the active class at the chat with the same value of contacts
+       $(".message-contact-area[data-chat="+attrContact+"]").addClass("active");
+       // make a copy of the img
+       var contactImg = $(this).find(".img-wrapper img").clone();
+       // make a copy of the name
+       var contactName = $(this).find(".info-contact-name").text();
+       // insert the value inside of the header message area
+       $(".header-message-area").find(".img-wrapper").html(contactImg);
+       $(".info-contact-name h4").text(contactName);
+     });
  });

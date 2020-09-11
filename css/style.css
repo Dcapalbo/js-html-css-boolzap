@@ -197,6 +197,12 @@ nav .contact-list li:hover {
   top: 60px;
   left: 20px;
 }
+.dropdown-list {
+  position: absolute;
+  background-color: #000;
+  width: 200px;
+  height: 150px;
+}
 .text-time {
   position: absolute;
   bottom: 2px;
@@ -204,13 +210,13 @@ nav .contact-list li:hover {
   font-size: 10px;
   color: #000;
 }
-.active-dn {
+.d-none {
   display: none;
 }
-.active {
+.contact-template.active {
   background-color: #e9ebeb;
 }
-.active-db {
+.main-message-area.active {
   display: block;
 }
 /* footer */
