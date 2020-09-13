@@ -145,11 +145,6 @@ nav .contact-list li:hover {
   background-color: #e9ebeb;
   overflow-y: scroll;
 }
-
-.main-message-area {
-  overflow-y: scroll;
-  position: relative;
-}
 .message-contact-area li i {
   color: #b1b1b1;
   padding-left: 30px;
@@ -161,41 +156,46 @@ nav .contact-list li:hover {
   background-color: #e9ebeb;
 }
 .main-message-area {
-  display: flex;
-  justify-content: flex-end;
+  overflow-y: scroll;
+  position: relative;
   height: calc(100% - 150px);
   background-image: url(../img/mine.jpg);
 }
-.main-message-area p {
-  text-align: center;
-  line-height: 60px;
-}
-.main-message-screen li {
-  list-style: none;
-  padding: 0px 10px;
-  margin: 20px 50px;
-  display: block;
-}
 .main-message-screen {
+  list-style: none;
   width: 100%;
 }
-.send {
-  float: right;
-  word-break: break-all;
-  border-radius: 10px;
-  max-width: 50%;
+.message-row {
+  display: flex;
+  width: 100%;
+  text-align: center;
   padding: 0px 10px;
-  background-color: lightgreen;
-  position: relative;
+  margin: 20px 0px;
 }
-.automatic-response {
-  float: left;
-  word-break: break-all;
-  border-radius: 10px;
-  max-width: 50%;
-  padding: 0px 10px;
-  background-color: #fff;
+.message-text {
+  max-width: 500px;
   position: relative;
+  padding: 10px;
+  border-radius: 10px;
+}
+.message-row.send {
+  justify-content: flex-end;
+  word-break: break-all;
+  white-space: normal;
+  width: 100%;
+  padding: 5px 10px;
+}
+.message-row.send .message-text {
+  background-color: lightgreen;
+}
+.message-row.automatic-response {
+  word-break: break-all;
+  white-space: normal;
+  width: 100%;
+  padding: 5px 10px;
+}
+.message-row.automatic-response .message-text {
+  background-color: #fff;
 }
 .clearfix::after {
   content: " ";
@@ -203,13 +203,19 @@ nav .contact-list li:hover {
   clear:both;
 }
 .dropdown-list {
+  white-space: nowrap;
   position: absolute;
   background-color: #fff;
-  top: 50px;
-  text-align: left;
-  right: 0px;
-  width: 150px;
-  height: 150px;
+  transform: translate(-50%, 50%);
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  height: 120px;
+  top: 20px;
+  right: 20px;
+}
+.dropdown-list li {
+  list-style: none;
 }
 .text-time {
   position: absolute;
@@ -218,20 +224,30 @@ nav .contact-list li:hover {
   font-size: 10px;
   color: #000;
 }
-.message-row {
-  position: relative;
-}
 .d-none {
   display: none;
 }
+.d-block{
+  display: block;
+}
+
 .contact-template.active {
   background-color: #e9ebeb;
+}
+.template {
+  display: none;
+}
+.message-row {
+  position: relative;
 }
 .main-message-area {
   display: none;
 }
 .main-message-area.active {
-  display: flex;
+  display: block;
+}
+.main-message-screen {
+  list-style: none;
 }
 /* footer */
 .footer-message-area {

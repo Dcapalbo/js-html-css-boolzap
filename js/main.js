@@ -16,8 +16,8 @@ $(document).ready(function() {
       // when the mouse enter inside the input box, show the plane and hide the microphone
       var plane = $(".fa-paper-plane")
       var microphone = $(".fa-microphone")
-        plane.addClass("active-dn");
-        microphone.removeClass("active-dn");
+        plane.addClass("d-none");
+        microphone.removeClass("d-none");
       });
   //make a function to get the actual time from the client computer
   function getTime() {
@@ -94,7 +94,6 @@ $(document).ready(function() {
        $(this).addClass("active");
        // make a variable for data-contact and data-sms
        var attrContact = $(this).attr("data-contact");
-
        // apply the active class at the chat with the same value of contacts
        $(".main-message-area[data-sms="+attrContact+"]").addClass("active");
        // make a copy of the img
