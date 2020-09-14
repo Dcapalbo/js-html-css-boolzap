@@ -60,7 +60,7 @@
      <div class="contact-list">
       <ul>
        <li class="list-inline">
-        <div class="contact-template" data-contact="1">
+        <div class="contact-template active" data-contact="1">
          <div class="img-wrapper">
           <img src="img/avatar_1.jpg" alt="Michele">
          </div>
@@ -69,7 +69,7 @@
            <h4>Michele</h4>
            <span class="last-entry-time"></span>
           </div>
-          <p>Non poteva essere altrimenti</p>
+          <p>Che non succeda più</p>
          </div>
         </div>
        </li>
@@ -83,7 +83,7 @@
           <h4>Fabio</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Nessun problema</p>
          </div>
         </div>
        </li>
@@ -97,7 +97,7 @@
           <h4>Samuele</h4>
           <span class="last-typed-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Birretta?</p>
          </div>
         </div>
        </li>
@@ -111,7 +111,7 @@
           <h4>Alessandro B.</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>domani sera al solito posto?</p>
          </div>
         </div>
        </li>
@@ -125,7 +125,7 @@
           <h4>Alessandro L.</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Sai che odio quando mi chiami in quel modo!</p>
          </div>
         </div>
        </li>
@@ -139,7 +139,7 @@
            <h4>Claudia</h4>
            <span class="last-entry-time"></span>
           </div>
-          <p>Non poteva essere altrimenti</p>
+          <p>Ci penso io!</p>
          </div>
         </div>
        </li>
@@ -153,7 +153,7 @@
            <h4>Davide</h4>
            <span class="last-entry-time"></span>
           </div>
-          <p>Non poteva essere altrimenti</p>
+          <p>Lo scoprirai solo vivendo!</p>
          </div>
         </div>
        </li>
@@ -167,7 +167,7 @@
           <h4>Federico</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Li avrai nei tempi stabiliti</p>
         </div>
        </div>
       </li>
@@ -181,7 +181,7 @@
           <h4>Giuseppe</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>da un regista simile, cosa ti aspettavi?</p>
         </div>
        </div>
       </li>
@@ -195,7 +195,7 @@
           <h4>Lorenzo</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Hai un altra domanda</p>
         </div>
        </div>
       </li>
@@ -209,7 +209,7 @@
           <h4>Francesco</h4>
           <span class="last-entry-time"></span>
          </div>
-         <p>Non poteva essere altrimenti</p>
+         <p>Rosso o Bianco</p>
         </div>
        </div>
       </li>
@@ -233,7 +233,7 @@
             <li><a href="#"><i class="fas fa-ellipsis-v"></i></a></li>
           </ul>
         </div>
-         <p>Ultimo accesso oggi alle ore 15:40</p>
+         <p>Ultimo accesso oggi alle ore: <span id="headertime" ></span></p>
         </div>
        </div>
      </div>
@@ -241,14 +241,14 @@
       <ul class="main-message-screen">
        <li class="message-row send">
         <div class="message-text">
-         <p>ciao come va?</p>
-         <span>11:30</span>
+         <p>Mi dispiace di essere arrivato in ritardo</p>
+         <span class="text-time"></span>
         </div>
        </li>
        <li class="message-row automatic-response">
         <div class="message-text">
-         <p>stasera al cinema??</p>
-         <span>01:30</span>
+         <p>Che non succeda più!</p>
+         <span class="text-time"></span>
         </div>
        </li>
       </ul>
@@ -257,14 +257,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>mi serve quel documento per domani?</p>
-          <span>09:30</span>
+          <p>Gentilmente potresti rimediarmi quel documento per domani?</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>ciao come va?</p>
-          <span>11:30</span>
+          <p>nessun problema</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -273,14 +273,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>succhiamelo?</p>
-          <span>04:30</span>
+          <p>Avrei bisogno di un link specifico</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>pizzetta?</p>
-          <span>09:30</span>
+          <p>Birretta?</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -289,14 +289,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>tutto bene?</p>
-          <span>11:30</span>
+          <p>Tutto bene, è parecchio che non ci si sente?</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>domani sera?</p>
-          <span>11:30</span>
+          <p>domani sera, al solito posto?</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -305,14 +305,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>buonasera sir?</p>
-          <span>05:30</span>
+          <p>Buonasera Sir?</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>ricordati che devi morire</p>
-          <span>11:30</span>
+          <p>Sai che odio quando mi chiami in quel modo!</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -321,14 +321,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>va bene speriamo non sia troppo presto?</p>
-          <span>11:30</span>
+          <p>Consideriamo di implementare quel processo entro domani!</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>dipende dalla vita che farai?</p>
-          <span>11:30</span>
+          <p>Ci penso io!</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -337,14 +337,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>potresti morire prima tu?</p>
-          <span>11:30</span>
+          <p>Nella morte vi è una sorta di liberazione?</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>si d'accordo hai ragione?</p>
-          <span>11:30</span>
+          <p>Lo scoprirai solo vivendo!</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -353,14 +353,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>cane malato?</p>
-          <span>11:30</span>
+          <p>Per domani sera ho bisogno di quei documenti</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>andiamo al festival delle tette moscie?</p>
-          <span>11:30</span>
+          <p>Li avrai nei tempi stabiliti!</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -369,14 +369,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>non male</p>
-          <span>11:30</span>
+          <p>non male il film di ieri!</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>volentieri</p>
-          <span>11:30</span>
+          <p>da un regista simile, cosa ti aspettavi?</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -386,13 +386,13 @@
         <li class="message-row send">
          <div class="message-text">
           <p>ciao come va?</p>
-          <span>11:30</span>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>ciao come va?</p>
-          <span>11:30</span>
+          <p>Hai un altra domanda?</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -401,14 +401,14 @@
        <ul class="main-message-screen">
         <li class="message-row send">
          <div class="message-text">
-          <p>ciao come va?</p>
-          <span>11:30</span>
+          <p>Domani abbiamo una cena da un amico, porti il vino?</p>
+          <span class="text-time"></span>
          </div>
         </li>
         <li class="message-row automatic-response">
          <div class="message-text">
-          <p>ciao come va?</p>
-          <span>11:30</span>
+          <p>rosso o bianco?</p>
+          <span class="text-time"></span>
          </div>
         </li>
        </ul>
@@ -428,14 +428,15 @@
      <div class="message-text">
       <p></p>
       <span></span>
+      <i class="fas fa-angle-down angle-down"></i>
+      <ul class="dropdown-list d-none">
+       <li>Info messaggio</li>
+       <li class="cm">Cancella messaggio</li>
+      </ul>
      </div>
     </li>
    </div>
-   <!-- dropdown-list -->
-   <!-- <ul class="dropdown-list">
-    <li>Info messaggio</li>
-    <li>Cancella messaggio</li>
-   </ul> -->
+   <!-- end template -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/main.js" charset="utf-8"></script>
   </header>

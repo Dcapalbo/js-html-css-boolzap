@@ -1,4 +1,28 @@
 $(document).ready(function() {
+  //Invoke getTime function and press it inside of the differents span tagName inside the DOM
+  document.getElementsByTagName("span")[12].innerHTML = getTime();
+  document.getElementsByTagName("span")[13].innerHTML = getTime();
+  document.getElementsByTagName("span")[14].innerHTML = getTime();
+  document.getElementsByTagName("span")[15].innerHTML = getTime();
+  document.getElementsByTagName("span")[16].innerHTML = getTime();
+  document.getElementsByTagName("span")[17].innerHTML = getTime();
+  document.getElementsByTagName("span")[18].innerHTML = getTime();
+  document.getElementsByTagName("span")[19].innerHTML = getTime();
+  document.getElementsByTagName("span")[20].innerHTML = getTime();
+  document.getElementsByTagName("span")[21].innerHTML = getTime();
+  document.getElementsByTagName("span")[22].innerHTML = getTime();
+  document.getElementsByTagName("span")[23].innerHTML = getTime();
+  document.getElementsByTagName("span")[24].innerHTML = getTime();
+  document.getElementsByTagName("span")[25].innerHTML = getTime();
+  document.getElementsByTagName("span")[26].innerHTML = getTime();
+  document.getElementsByTagName("span")[27].innerHTML = getTime();
+  document.getElementsByTagName("span")[28].innerHTML = getTime();
+  document.getElementsByTagName("span")[29].innerHTML = getTime();
+  document.getElementsByTagName("span")[30].innerHTML = getTime();
+  document.getElementsByTagName("span")[31].innerHTML = getTime();
+  document.getElementsByTagName("span")[32].innerHTML = getTime();
+  document.getElementsByTagName("span")[33].innerHTML = getTime();
+
   // myFunctions
   $(".footer-message-area input").mouseenter(
   function() {
@@ -19,6 +43,18 @@ $(document).ready(function() {
         plane.addClass("d-none");
         microphone.removeClass("d-none");
       });
+    //make a function which, at the click will show the dropdown-list
+    $(document).on( "click", ".angle-down", function() {
+       $(this).next(".dropdown-list").removeClass("d-none");
+     });
+    //make a function which, at the click will remove the dropdown-list
+    $(document).on( "click", ".dropdown-list .cm", function() {
+       $(this).parents(".message-row").remove();
+     });
+    //make a function which, at the click will add the class, display none
+    $(document).on( "mouseleave", ".message-text", function() {
+       $(this).find(".dropdown-list").addClass("d-none");
+     });
   //make a function to get the actual time from the client computer
   function getTime() {
     var date = new Date();
@@ -30,13 +66,12 @@ $(document).ready(function() {
     } else {
       var time = hours + " : " + minutes;
     } return time;
-  }
+  };
   // make a function to insert a text from the input inside of the message-area
-  function sendSms() {
+  function sendSms(attribute) {
     // make a variable for the value of the input
     var sms = $(".footer-message-area input").val();
     if (sms != "") {
-      $(".footer-message-area input").val("");
       // make a copy of the input
       var template = $(".template .message-row").clone();
       // insert the text inside of the p and the span
@@ -46,10 +81,11 @@ $(document).ready(function() {
       // insert the class
       template.addClass("send");
       // append the object inside of the main message screen
-      $(".main-message-screen").append(template);
+      $(".main-message-area[data-sms="+attribute+"]").append(template);
+      $(".footer-message-area input").val("");
     }
-  }
-  function getReply(text) {
+  };
+  function getReply(text, attribute) {
     // make a variable to clone the template
     var template = $(".template .message-row").clone();
     // chose the tagname to insert the text
@@ -58,16 +94,17 @@ $(document).ready(function() {
     // attach the class tot he template
     template.addClass("automatic-response");
     // append the text inside the new template
-    $(".main-message-screen").append(template);
-  }
+    $(".main-message-area[data-sms="+attribute+"]").append(template);
+  };
   // make a function to send the text with a press of a button on the keyboard
   $(".footer-message-area input").keydown(function(event) {
     if (event.which == 13) {
-      sendSms();
+      var attrContact = $(".contact-template.active").attr("data-contact");
+      sendSms(attrContact);
       // make an asincron function and invoke it to get an automatic reply
       setTimeout(function(){
-        getReply("ok!")
-      }, 2000);
+        getReply("ok!", attrContact);
+      }, 3000);
     }
   });
   $(".search-bar input").keyup(function(){
@@ -85,7 +122,6 @@ $(document).ready(function() {
         }
       });
     });
-
     $(".contact-template").click(function(){
        // removing the active class from every contact-template and message-contact-    area
        $(".contact-template").removeClass("active");

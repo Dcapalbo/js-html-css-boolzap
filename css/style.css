@@ -17,6 +17,9 @@ body {
 list-style: none;
 display: flex;
 }
+.d-none {
+  display: none;
+}
 /* basic values */
 /* container */
 .container {
@@ -145,7 +148,7 @@ nav .contact-list li:hover {
   background-color: #e9ebeb;
   overflow-y: scroll;
 }
-.message-contact-area li i {
+.header-message-area .info-contact-name li i {
   color: #b1b1b1;
   padding-left: 30px;
   padding-top: 10px;
@@ -175,8 +178,27 @@ nav .contact-list li:hover {
 .message-text {
   max-width: 500px;
   position: relative;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
+}
+#headertime {
+  color: #000;
+}
+.angle-down {
+display:none;
+position: absolute;
+top:10%;
+right: 10%;
+}
+.message-text:hover .angle-down {
+  cursor: pointer;
+  display: block;
+}
+.message-row.send .dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
 }
 .message-row.send {
   justify-content: flex-end;
@@ -203,20 +225,22 @@ nav .contact-list li:hover {
   clear:both;
 }
 .dropdown-list {
+  z-index: 1;
+  display: block;
+  list-style: none;
   white-space: nowrap;
   position: absolute;
   background-color: #fff;
-  transform: translate(-50%, 50%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.50);
   padding: 10px;
   text-align: center;
-  width: 200px;
-  height: 120px;
-  top: 20px;
-  right: 20px;
+  top: 100%;
+  left: 0;
 }
-.dropdown-list li {
-  list-style: none;
-}
+/* .dropdown-list.d-none {
+  display: none;
+} */
 .text-time {
   position: absolute;
   bottom: 2px;
@@ -224,13 +248,9 @@ nav .contact-list li:hover {
   font-size: 10px;
   color: #000;
 }
-.d-none {
-  display: none;
-}
 .d-block{
   display: block;
 }
-
 .contact-template.active {
   background-color: #e9ebeb;
 }
@@ -269,4 +289,7 @@ nav .contact-list li:hover {
   width: 80%;
   height: 40px;
   border-radius: 20px;
+}
+.dropdown-list.d-none {
+  display: none;
 }
