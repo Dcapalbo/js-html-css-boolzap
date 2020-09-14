@@ -20,6 +20,9 @@ display: flex;
 .d-none {
   display: none;
 }
+.green {
+  color: lightgreen;
+}
 /* basic values */
 /* container */
 .container {
@@ -130,6 +133,17 @@ nav .notifications{
   width: calc(100% - 50px);
 }
 .info-contact-name {
+  display: flex;
+  justify-content: space-between;
+}
+.info-contact-notifications {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  width: calc(100% - 50px);
+}
+.info-contact-notifications-name {
   display: flex;
   justify-content: space-between;
 }

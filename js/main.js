@@ -22,7 +22,10 @@ $(document).ready(function() {
   document.getElementsByTagName("span")[31].innerHTML = getTime();
   document.getElementsByTagName("span")[32].innerHTML = getTime();
   document.getElementsByTagName("span")[33].innerHTML = getTime();
-
+  // var hours = [10:32, 23:54, 04:44, 02:34, 08:32, 11:34, 18:45, 19:43, 22:25, 17:34, 21:25];
+  // console.log(hours);
+  // var randomHours = Math.floor(Math.random() * hours.length);
+  // console.log(randomHours);
   // myFunctions
   $(".footer-message-area input").mouseenter(
   function() {
@@ -76,6 +79,7 @@ $(document).ready(function() {
       var template = $(".template .message-row").clone();
       // insert the text inside of the p and the span
       template.find("p").text(sms);
+      $(".header-message-area .info-contact p").text("Is writing...");
       // invoke the getTime function
       template.find("span").text(getTime()).addClass("text-time");
       // insert the class
@@ -85,6 +89,9 @@ $(document).ready(function() {
       $(".footer-message-area input").val("");
     }
   };
+  //make a variable into an array with some random answers and hours
+   var answers = ["Ok","Ci vediamo presto!","Bene","Ciao!","Buona giornata!","Benissimo","Sì", "tranquillo","Perfetto!","Sicuramente","Sono d'accordo","Sul serio?","Ci sentiamo più tardi", "ok?"];
+   var randomAnswers = Math.floor(Math.random() * answers.length);
   function getReply(text, attribute) {
     // make a variable to clone the template
     var template = $(".template .message-row").clone();
@@ -95,6 +102,7 @@ $(document).ready(function() {
     template.addClass("automatic-response");
     // append the text inside the new template
     $(".main-message-area[data-sms="+attribute+"]").append(template);
+    $(".header-message-area .info-contact p").text("ultimo accesso alle ore: " + getTime());
   };
   // make a function to send the text with a press of a button on the keyboard
   $(".footer-message-area input").keydown(function(event) {
@@ -104,7 +112,7 @@ $(document).ready(function() {
       // make an asincron function and invoke it to get an automatic reply
       setTimeout(function(){
         getReply("ok!", attrContact);
-      }, 3000);
+      }, 2000);
     }
   });
   $(".search-bar input").keyup(function(){
@@ -140,4 +148,5 @@ $(document).ready(function() {
        $(".header-message-area").find(".img-wrapper").html(contactImg);
        $("#changeh4").text(contactName);
      });
+
  });
