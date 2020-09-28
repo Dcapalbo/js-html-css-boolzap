@@ -48,7 +48,7 @@ $(document).ready(function() {
     } else {
       var time = hours + " : " + minutes;
     } return time;
-  }; $("span").append(getRandomHours());
+  };
 
   // make a function to insert a text from the input inside of the message-area
   function sendSms(attribute) {
@@ -59,7 +59,7 @@ $(document).ready(function() {
       var template = $(".template .message-row").clone();
       // insert the text inside of the p and the span
       template.find("p").text(sms);
-      $(".header-message-area .info-contact p").text("Is writing...");
+      $(".header-message-area .info-contact p").text("Is writing...").css("color","green");
       // invoke the getTime function
       template.find("span").text(getTime()).addClass("text-time");
       // insert the class
@@ -68,6 +68,7 @@ $(document).ready(function() {
       $(".main-message-area[data-sms="+attribute+"]").append(template);
       // resetting the value inside the input
       $(".footer-message-area input").val("");
+      updateScroll();
     }
   };
   //make a variable into an array with some random answers and hours
@@ -83,6 +84,7 @@ $(document).ready(function() {
     // append the text inside the new template
     $(".main-message-area[data-sms="+attribute+"]").append(template);
     $(".header-message-area .info-contact p").text("ultimo accesso alle ore: " + getTime());
+    updateScroll();
   };
 
   // make a function to send the text with a press of a button on the keyboard
@@ -128,6 +130,7 @@ $(document).ready(function() {
        // make a lecture of the name
        var contactName = $(this).find(".info-contact-name").text();
        // insert the value inside of the header message area
+       $(".last-entry-time").text(getRandomHours());
        $(".header-message-area").find(".img-wrapper").html(contactImg);
        $("#changeh4").text(contactName);
      });
@@ -159,9 +162,12 @@ $(document).ready(function() {
         "02:34", "08:32", "08:33",
         "11:34", "18:45", "19:43",
         "22:25", "17:34", "21:25"];
-       for (var i = 0; i < hours.length; i++) {
-         var randomHours = Math.floor(Math.random() *     hours.length);
-       }
-       return hours[randomHours];
+      var randomHours = Math.floor(Math.random() * hours.length);
+      return hours[randomHours];
      }
+      //make a function for the scroll
+      function updateScroll(){
+       var element = $(".main-message-area");
+       element.scrollTop(element[0].scrollHeight);
+      }
 });

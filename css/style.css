@@ -208,6 +208,12 @@ right: 10%;
   cursor: pointer;
   display: block;
 }
+.message-text .dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  right: 0;
+}
 .message-row.send .dropdown-list {
   position: absolute;
   top: 100%;
