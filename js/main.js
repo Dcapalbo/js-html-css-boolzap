@@ -1,6 +1,6 @@
 $(document).ready(function() {
   //Invoke getTime function and press it inside of the differents span and p tagName inside the DOM with a class
-  // myFunctions
+  // Functions
   $(".footer-message-area input").mouseenter(
   function() {
     // make some variables for an elastic coding
@@ -59,7 +59,7 @@ $(document).ready(function() {
       var template = $(".template .message-row").clone();
       // insert the text inside of the p and the span
       template.find("p").text(sms);
-      $(".header-message-area .info-contact p").text("Is writing...").css("color","green");
+      $(".header-message-area .info-contact p").text("Is writing...").addClass("green");
       // invoke the getTime function
       template.find("span").text(getTime()).addClass("text-time");
       // insert the class
@@ -71,19 +71,22 @@ $(document).ready(function() {
       updateScroll();
     }
   };
-  //make a variable into an array with some random answers and hours
 
+  //make a variable into an array with some random answers and hours
   function getReply(text, attribute) {
     // make a variable to clone the template
     var template = $(".template .message-row").clone();
     // chose the tagname to insert the text
     template.find("p").text(text);
-    template.find("span").text(getTime()).addClass("text-time");
+    var time = getTime();
+    //invoke the renderTime
+    template.find("span").text(time).addClass("text-time");
     // attach the class tot he template
     template.addClass("automatic-response");
     // append the text inside the new template
     $(".main-message-area[data-sms="+attribute+"]").append(template);
-    $(".header-message-area .info-contact p").text("ultimo accesso alle ore: " + getTime());
+    $(".header-message-area .info-contact p").text("ultimo accesso alle ore: " + time).removeClass("green");
+    $(".contact-template[data-contact="+ attribute +"]").find(".last-entry-time").text(time);
     updateScroll();
   };
 
@@ -116,7 +119,10 @@ $(document).ready(function() {
     });
 
     $(".contact-template").click(function(){
-       // removing the active class from every contact-template and message-contact-    area
+       // removing the active class from every contact-template and message-contact-area
+       var lastEntryTime = $(this).find(".last-entry-time").text();
+       console.log(lastEntryTime);
+       $("#headertime").text(lastEntryTime);
        $(".contact-template").removeClass("active");
        $(".main-message-area").removeClass("active");
        // add active class to the contact clicked
@@ -128,9 +134,8 @@ $(document).ready(function() {
        // make a copy of the img
        var contactImg = $(this).find(".img-wrapper img").clone();
        // make a lecture of the name
-       var contactName = $(this).find(".info-contact-name").text();
+       var contactName = $(this).find(".info-contact-name h4").text();
        // insert the value inside of the header message area
-       $(".last-entry-time").text(getRandomHours());
        $(".header-message-area").find(".img-wrapper").html(contactImg);
        $("#changeh4").text(contactName);
      });
@@ -167,7 +172,7 @@ $(document).ready(function() {
      }
       //make a function for the scroll
       function updateScroll(){
-       var element = $(".main-message-area");
-       element.scrollTop(element[0].scrollHeight);
+          var element = $(".main-message-area.active");
+          element.scrollTop(element[0].scrollHeight);
       }
 });
